@@ -37,7 +37,7 @@ function App() {
       console.log("3")
       const account = accounts[0];
 
-      setCurrentAccount(account);
+      setCurrentAccount(() => account);
     }
   }
 
@@ -72,7 +72,7 @@ function App() {
     }
 
     fetchData().catch(console.error);;
-    preference_fetcher()
+    preference_fetcher().catch(console.error)
 
   }, [])
 
