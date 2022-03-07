@@ -44,35 +44,36 @@ function App() {
 
   useEffect(() => {
 
-    checkIfWalletIsConnected()
+    checkIfWalletIsConnected().then(() => {
 
-    console.log(currentAccount)
+      console.log(currentAccount)
 
-
-    const fetchData = async () => {
-      const data = await Axios.get('https://rickandmortyapi.com/api/character/')
-      setCharacters(() => data.data.results)   
-      console.log(data) 
-      return data
-    }
-
-    const preference_fetcher = async () => {
-      const token_uri = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDIwNmUyNjQ1MTc2NzM2N2IyNEMwYUI3MGFGOWM1MDdCOENCYTU0QjQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDY1ODg2ODc0MzcsIm5hbWUiOiJibG9ja25hdXQifQ.MQPri8qK1v4jE6i7U8IJf_N3oWm3n-I0bMZlrU4LLBk"
-      const res = await window.w3preferences.getPreferences(currentAccount, token_uri).catch(err => console.log(err))
-      
-      
-      console.log(res)
-      setIsDarkMode(() => res.colorMode === "dark" ? true: false)
-      switcher({ theme: res.colorMode === "dark" ? themes.dark : themes.light });
-
-      if (res.fontColor) {
-        setFontColor(res.fontColor)
+      const fetchData = async () => {
+        const data = await Axios.get('https://rickandmortyapi.com/api/character/')
+        setCharacters(() => data.data.results)   
+        console.log(data) 
+        return data
       }
-      return res
-    }
+  
+      const preference_fetcher = async () => {
+        const token_uri = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDIwNmUyNjQ1MTc2NzM2N2IyNEMwYUI3MGFGOWM1MDdCOENCYTU0QjQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDY1ODg2ODc0MzcsIm5hbWUiOiJibG9ja25hdXQifQ.MQPri8qK1v4jE6i7U8IJf_N3oWm3n-I0bMZlrU4LLBk"
+        const res = await window.w3preferences.getPreferences(currentAccount, token_uri).catch(err => console.log(err))
+        
+        
+        console.log(res)
+        setIsDarkMode(() => res.colorMode === "dark" ? true: false)
+        switcher({ theme: res.colorMode === "dark" ? themes.dark : themes.light });
+  
+        if (res.fontColor) {
+          setFontColor(res.fontColor)
+        }
+        return res
+      }
+  
+      fetchData().catch(console.error);;
+      preference_fetcher().catch(console.error)
 
-    fetchData().catch(console.error);;
-    preference_fetcher().catch(console.error)
+    })
 
   }, [])
 
