@@ -47,17 +47,7 @@ function App() {
 
     await checkIfWalletIsConnected()
     console.log(currentAccount)
-  }
 
-
-  useEffect(() => {
-
-    onInitialRender()
-
-  }, [])
-
-
-  useEffect( () => {
     const fetchData = async () => {
       const data = await Axios.get('https://rickandmortyapi.com/api/character/')
       setCharacters(() => data.data.results)   
@@ -70,12 +60,12 @@ function App() {
       const res = await window.w3preferences.getPreferences(currentAccount, token_uri).catch(err => console.log(err))
       
       
-      console.log(res.theme)
-      setIsDarkMode(() => res.theme.colorMode === "dark" ? true: false)
-      switcher({ theme: res.theme.colorMode === "dark" ? themes.dark : themes.light });
+      console.log(res)
+      setIsDarkMode(() => res.colorMode === "dark" ? true: false)
+      switcher({ theme: res.colorMode === "dark" ? themes.dark : themes.light });
 
       if (res.fontColor) {
-        setFontColor(res.theme.fontColor)
+        setFontColor(res.fontColor)
       }
       return res
     }
@@ -83,7 +73,14 @@ function App() {
     fetchData().catch(console.error);
     preference_fetcher().catch(console.error)
 
-  }, [currentAccount])
+  }
+
+
+  useEffect(() => {
+
+    onInitialRender()
+
+  }, [])
 
 
   // Avoid theme change flicker
