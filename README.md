@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Blocknauts-dapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BlockNauts team Hackaton dAPP 👨‍💻👩‍💻
+This project is part of a challenge for the hackaton organized by Web3Con.
 
-## Available Scripts
+It's made by @iamverg, @SamRogers.eth, @sidc0des, @Taylor Wang, @voruh the exploruh
 
-In the project directory, you can run:
+# How does our project work?
 
-### `yarn start`
+Part 1: Users can sign in with their wallet, have an interface where they can set different options like do-not-track me, font-size, color... like a theme. Save them decentralized in a smart contract. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Part 2: A small js lib which website owners can use to fetch those settings if the user signed in on their website with their wallet. So the websites dev is able to allow the user do modifiy, for example font-size, background-color of the site... to set an personal theme on the websites. Useful for customizing, for visual impaired people who need a high contrast font-color + size and many more...!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Project architecture
 
-### `yarn test`
+![274c40121057666e3b114c4e352b99cb](https://user-images.githubusercontent.com/74734921/156951455-60c3dbf2-294b-46bd-b7dd-51222d62da55.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![5273d04338b3e60be80e39e242b0cf15](https://user-images.githubusercontent.com/74734921/156951463-41ef7ee6-8ee8-4e31-80fe-83afb091e398.png)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Technologies used ✨
+Frontend: React, CSS, HTML, JS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend: Solidity, Hardhat, Filecoin.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Figma 🎨
+https://www.figma.com/file/G5OVZFz5XXyKt5KbQuNe99/Web3-Project?node-id=0%3A1
 
-### `yarn eject`
+# App Site
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://user-images.githubusercontent.com/74734921/156951285-677384f7-89dd-4c27-8287-c6f1e819646f.mp4
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Demo Site
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://user-images.githubusercontent.com/74734921/156951095-fa5d3dfa-b957-419f-8fcb-e66fb3ee7a76.mp4
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Preview 👀
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
